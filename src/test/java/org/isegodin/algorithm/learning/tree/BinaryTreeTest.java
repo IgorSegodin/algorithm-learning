@@ -41,8 +41,6 @@ public class BinaryTreeTest {
         tree.add(9);
         tree.add(11);
 
-        tree.print();
-
         tree.balance();
 
         Assert.assertEquals(11, tree.size());
@@ -55,16 +53,16 @@ public class BinaryTreeTest {
         Assert.assertFalse(iterator.hasNext());
     }
 
-    @Test
+//    @Test
     public void testBalancing() {
-        for (int i = 0; i < 10; i++) {
-            tree.add(i);
-        }
-
-        tree.balance();
-
-        for (Integer integer : tree) {
-            System.out.println(integer);
-        }
+//        for (int i = 0; i < 10; i++) {
+//            tree.add(i);
+//        }
+//
+//        tree.balance();
+//
+//        for (Integer integer : tree) {
+//            System.out.println(integer);
+//        }
     }
 }

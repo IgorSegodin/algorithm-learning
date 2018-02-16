@@ -1,4 +1,4 @@
-package org.isegodin.algorithm.learning.core;
+package org.isegodin.algorithm.learning.util.canvas;
 
 import javafx.scene.Group;
 import javafx.scene.Scene;

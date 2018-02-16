@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author isegodin
  */
-public class BinaryTree<T> implements Iterable<T> {
+public class BinaryTree<T> implements Tree<T> {
 
     private TreeNode<T> rootNode;
 
@@ -57,19 +57,9 @@ public class BinaryTree<T> implements Iterable<T> {
         size += 1;
 
         if (compare > 0) {
-            if (node.getRight() == null) {
-                node.setRight(new TreeNode<>(node.getData(), node));
-                node.setData(item);
-            } else {
-                node.setLeft(new TreeNode<>(item, node));
-            }
+            node.setLeft(new TreeNode<>(item, node));
         } else {
-            if (node.getLeft() == null) {
-                node.setLeft(new TreeNode<>(node.getData(), node));
-                node.setData(item);
-            } else {
-                node.setRight(new TreeNode<>(item, node));
-            }
+            node.setRight(new TreeNode<>(item, node));
         }
     }
 
@@ -80,41 +70,11 @@ public class BinaryTree<T> implements Iterable<T> {
         return false;
     }
 
-    public void print() {
-        if (rootNode == null) {
-            return;
+    public Node<T> getRootNode() {
+        if (rootNode != null) {
+            return new ReadOnlyNode<>(rootNode);
         }
-        List<List<TreeNode<T>>> levels = new ArrayList<>();
-        List<TreeNode<T>> currentLevel = new ArrayList<>();
-        currentLevel.add(rootNode);
-
-        boolean isEmpty = false;
-
-        while (!isEmpty) {
-            isEmpty = true;
-            List<TreeNode<T>> nextLevel = new ArrayList<>();
-
-            for (TreeNode<T> n : currentLevel) {
-                if (n != null) {
-                    nextLevel.add(n.getLeft());
-                    nextLevel.add(n.getRight());
-                    if (n.getLeft() != null || n.getRight() != null) {
-                        isEmpty = false;
-                    }
-                } else {
-                    nextLevel.add(null);
-                    nextLevel.add(null);
-                }
-            }
-            if (!isEmpty) {
-                levels.add(currentLevel);
-                currentLevel = nextLevel;
-            }
-        }
-
-
-
-        System.out.println();
+        return null;
     }
 
     public void balance() {

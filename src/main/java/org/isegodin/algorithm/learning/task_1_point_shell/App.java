@@ -2,13 +2,8 @@ package org.isegodin.algorithm.learning.task_1_point_shell;
 
 import javafx.application.Application;
 import javafx.geometry.Point2D;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import org.isegodin.algorithm.learning.core.CanvasApplicationBase;
+import org.isegodin.algorithm.learning.util.canvas.CanvasApplicationBase;
 
 import java.util.ArrayList;
 import java.util.List;
