@@ -37,7 +37,6 @@ public class TreeRenderer {
                 }
             }
         }
-
     }
 
     private void drawNode(GraphicsContext graphicsContext, Point2D center, int level, int index, int treeMaxLevel, Object value) {
@@ -101,7 +100,7 @@ public class TreeRenderer {
     }
 
     private void text(GraphicsContext graphicsContext, Point2D point, String value) {
-        graphicsContext.setFill(Color.YELLOW);
+        graphicsContext.setFill(Color.BLACK);
         graphicsContext.setLineWidth(1);
         graphicsContext.setTextBaseline(VPos.CENTER);
 
@@ -111,7 +110,7 @@ public class TreeRenderer {
     }
 
     private void strokeCircle(GraphicsContext graphicsContext, Point2D point) {
-        graphicsContext.setStroke(Color.YELLOW);
+        graphicsContext.setStroke(Color.BLACK);
         graphicsContext.setLineWidth(1);
 
         double delta = NODE_SIZE / 2;
